@@ -1,0 +1,9 @@
+export DEFAULT_GRADLE_OPTS='--daemon --parallel'
+function gradle {
+	if [ -f ./gradlew ]; then
+		./gradlew $DEFAULT_GRADLE_OPTS $@
+	else
+		/usr/bin/env gradle $DEFAULT_GRADLE_OPTS $@
+	fi
+}
+
